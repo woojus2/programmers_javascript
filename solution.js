@@ -341,3 +341,7 @@ console.log(solution(23));
 console.log(solution(51));
 console.log(solution(100));
 */
+
+/*
+출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges/beginner?order=acceptance_desc
+*/
