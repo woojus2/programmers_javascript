@@ -229,6 +229,7 @@ console.log(solution("bread"));
 
 /* 22. 직각삼각형 출력하기 */ /********************************/
 
+
 /* 23. 짝수 홀수 개수 */
 /*
 function solution(num_list) {
@@ -290,7 +291,17 @@ console.log(solution(91, 3));
 console.log(solution(180, 4));
 */
 
-/* 27. 양꼬치 */ /********************************/
+/* 27. 양꼬치 */
+/*
+function solution(n, k) {
+    var yang = 12000;
+    var ken = 2000;
+    return (yang*n) + (ken*k)-(Math.floor(n/10)*ken);
+}
+
+console.log(solution(10, 3));
+console.log(solution(64, 6));
+*/
 
 /* 28. 짝수의 합 */
 /*
@@ -343,5 +354,5 @@ console.log(solution(100));
 */
 
 /*
-출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges/beginner?order=acceptance_desc
+출처: 프로그래머스 코딩 테스트 입문, https://school.programmers.co.kr/learn/challenges/beginner?order=acceptance_desc
 */
