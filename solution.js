@@ -353,6 +353,141 @@ console.log(solution(51));
 console.log(solution(100));
 */
 
+//////////////////////////////////////////////////
+
+/* 31. 진료순서 정하기 */
+/*
+function solution(age) {
+    var answer = '';
+    age = String(age);
+    let str = [];	
+ 
+    for (let i = 97; i <= 122; i++) {
+        str += String.fromCharCode(i);
+    }
+    for(let j = 0; j< age.length; j++){
+        answer+=str[age[j]];
+    }
+    return answer;
+}
+
+console.log(solution(23));
+console.log(solution(51));
+console.log(solution(100));
+*/
+
+/* 32. 순서쌍의 개수 */
+/*
+function solution(n) {
+    var answer = 0;
+    for(var i=0; i<=n; i++){
+        if(n % i == 0){
+            answer++;
+        }
+    }
+    
+    return answer;
+}
+
+console.log(solution(20));
+console.log(solution(100));
+*/
+
+/* 33. 개미 군단 */
+/*
+function solution(hp) {
+    let jang = 5;
+    let byeong = 3;
+    let ill = 1;
+    let answer = 0;
+    let jang_cnt = 0;
+    let byeong_cnt = 0;
+    let ill_cnt = 0;
+    
+    jang_cnt = Math.floor(hp/jang); // 장군개미 수
+    byeong_cnt = Math.floor((hp-jang_cnt*jang)/byeong); // 병정개미 수
+    ill_cnt = Math.floor((hp-(jang_cnt*jang + byeong_cnt*byeong))/ill); // 일개미 수
+    answer = jang_cnt+byeong_cnt+ill_cnt;
+  
+    return answer;
+}
+
+console.log(solution(23));
+console.log(solution(24));
+console.log(solution(999));
+*/
+
+/* 34. 모스 부포 (1) */ /********************************/
+/* 35. 가위 바위 보 */ /********************************/
+/* 36. 구슬을 나누는 경우의 수 */ /********************************/
+/* 37. 점의 위치 구하기 */ /********************************/
+/* 38. 2차원으로 만들기 */ /********************************/
+/* 39. 공 던지기 */ /********************************/
+/* 40. 배열 회전시키기 */ /********************************/
+
+/* 41. 주사위의 개수 */
+/*
+function solution(box, n) {
+    return (Math.floor(box[0]/n))*(Math.floor(box[1]/n))*(Math.floor(box[2]/n));
+}
+
+console.log(solution([1,1,1],1));
+console.log(solution([10,8,6],3));
+*/
+
+/* 42. 합성 수 찾기 */ /********************************/
+
+/* 43. 최댓값 만들기(1) */
+/*
+function solution(numbers) {
+    numbers.sort((a, b) => a - b);
+    return numbers[numbers.length-1]*numbers[numbers.length-2];
+}
+
+console.log(solution([1,2,3,4,5]));
+console.log(solution([0,31,24,10,1,9]));
+*/
+
+/* 44. 팩토리얼 */ /********************************/
+/* 45. 모음 제거 */ /********************************/
+/* 46. 문자열 정렬하기 (1)*/ /********************************/
+
+/* 47. 숨어있는 숫자의 덧셈 (1) */
+/*
+function solution(my_string) {
+    var answer = [];
+    answer = my_string;
+    var sum = 0;
+    for(var i=0; i<answer.length; i++){
+        if(!(isNaN(answer[i]))){
+            sum += Number(answer[i]);
+        }
+    }
+    return sum;
+}
+
+console.log(solution("aAb1B2cC34oOp"));
+console.log(solution("1a2b3c4d123"));
+*/
+
+/* 48. 소인수분해 */ /********************************/
+/* 49. 컨트롤 제트 */ /********************************/
+
+/* 50. 배열의 원소의 길이 */
+/*
+function solution(strlist) {
+    var answer = [];
+    for(var i=0; i<strlist.length; i++){
+        answer.push(strlist[i].length);
+    }
+    return answer;
+}
+
+console.log(solution(["We", "are", "the", "world!"]));
+console.log(solution(["I", "Love", "Programmers."]));
+*/
+
+
 /*
 출처: 프로그래머스 코딩 테스트 입문, https://school.programmers.co.kr/learn/challenges/beginner?order=acceptance_desc
 */
