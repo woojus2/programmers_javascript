@@ -354,29 +354,31 @@ console.log(solution(100));
 */
 
 //////////////////////////////////////////////////
-
-/* 31. 진료순서 정하기 */
-/*
-function solution(age) {
-    var answer = '';
-    age = String(age);
-    let str = [];	
  
-    for (let i = 97; i <= 122; i++) {
-        str += String.fromCharCode(i);
-    }
-    for(let j = 0; j< age.length; j++){
-        answer+=str[age[j]];
-    }
-    return answer;
+/* 31. 진료순서 정하기 - (120835) */
+/*
+function solution(emergency) {
+    var real_arr = emergency.slice();; 
+    emergency.sort((a, b) => b - a); 
+    var obj = {};
+    var result = [];
+    emergency.forEach((element, index) => {obj[index+1] = element;});
+    for (var i = 0; i<real_arr.length; i++){
+        for(var [key,value] of Object.entries(obj)){
+                if(real_arr[i]==value){
+                    result.push(parseInt(key));
+                }
+            }
+        }
+   return result;
 }
 
-console.log(solution(23));
-console.log(solution(51));
-console.log(solution(100));
+console.log(solution([3, 76, 24]));
+console.log(solution([1, 2, 3, 4, 5, 6, 7]));
+console.log(solution([30, 10, 23, 6, 100]));
 */
 
-/* 32. 순서쌍의 개수 */
+/* 32. 순서쌍의 개수 - (120836) */
 /*
 function solution(n) {
     var answer = 0;
@@ -393,7 +395,7 @@ console.log(solution(20));
 console.log(solution(100));
 */
 
-/* 33. 개미 군단 */
+/* 33. 개미 군단 - (120837) */
 /*
 function solution(hp) {
     let jang = 5;
@@ -417,15 +419,160 @@ console.log(solution(24));
 console.log(solution(999));
 */
 
-/* 34. 모스 부포 (1) */ /********************************/
-/* 35. 가위 바위 보 */ /********************************/
-/* 36. 구슬을 나누는 경우의 수 */ /********************************/
-/* 37. 점의 위치 구하기 */ /********************************/
-/* 38. 2차원으로 만들기 */ /********************************/
-/* 39. 공 던지기 */ /********************************/
-/* 40. 배열 회전시키기 */ /********************************/
+/* 34. 모스 부포 (1) - (120838) */
+/*
+function solution(letter) {
+    var answer = letter.split(' ');
+    var morse = { 
+        '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f',
+        '--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l',
+        '--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r',
+        '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
+        '-.--':'y','--..':'z'
+    }
+    var result = '';
+    for(var i = 0; i<answer.length; i++){
+        for(var [key,value] of Object.entries(morse)){
+             if(answer[i] == key){
+                result+=value;   
+            }
+        }
+    }
+    return result;
+}
 
-/* 41. 주사위의 개수 */
+console.log(solution(".... . .-.. .-.. ---"));
+console.log(solution(".--. -.-- - .... --- -."));
+
+참고한 블로그 : https://juyami.tistory.com/89
+*/
+
+/* 35. 가위 바위 보 - (120839) */
+/*
+function solution(rsp) {
+    var answer = rsp.split('');
+    var result = '';
+    var rock_paper_scissors = {'0':'5','2':'0','5':'2'};
+    for(var i=0; i<answer.length; i++){
+        for(var [key,value] of Object.entries(rock_paper_scissors)){
+            if(answer[i] == key){
+                result += value;
+            }
+        }
+    }
+    return result;
+}
+
+console.log(solution("2"));
+console.log(solution("205"));
+*/
+
+/* 36. 구슬을 나누는 경우의 수 - (120840) */
+/*
+function solution(balls, share) {
+    // balls = n
+    // share = m
+    
+    // 분자 n!
+    var n = 1; 
+    for(var i=1; i<=balls; i++){
+        n *= i;
+    }
+    
+    // 분모 (n-m)! * m!
+    var m1 = 1; // (n-m)!
+    var m2 = 1; // m!
+    for(var i=1; i<=(balls-share); i++){
+        m1*= i;
+    }
+    for(var i=1; i<=share; i++){
+        m2*= i;
+    }
+    var m = m1 * m2;
+   
+    return Math.round(n/m);
+}
+
+console.log(solution(3,2));
+console.log(solution(5,3));
+*/
+
+/* 37. 점의 위치 구하기 - (120841) */
+/*
+function solution(dot) {
+    if(Math.sign(dot[0]) == 1 && Math.sign(dot[1]) == 1){
+        return 1;
+    }else if(Math.sign(dot[0]) == 1 && Math.sign(dot[1]) == -1){
+        return 4;
+    }else if(Math.sign(dot[0]) == -1 && Math.sign(dot[1]) == 1){
+        return 2;
+    }else{
+        return 3;
+    }
+}
+
+console.log(solution([2, 4]));
+console.log(solution([-7, 9]));
+*/
+
+/* 38. 2차원으로 만들기 - (120842) */ /********************************/
+
+/* 39. 공 던지기 - (120843) */
+/*
+function solution(numbers, k) {
+    var answer = [];
+    for (var i = 0; i<=1000; i++){
+        answer.splice(i,numbers.length-1,numbers);
+        var new_arr1 = answer.flat(2);
+        var new_arr2 = [];
+       
+        for (var j = 0; j <= new_arr1.length; j++){
+            if(j%2==0){
+                new_arr2.push(new_arr1[j]);
+            }
+        }
+    }
+   return new_arr2[k-1];
+}
+
+console.log(solution([1, 2, 3, 4],2));
+console.log(solution([1, 2, 3, 4, 5, 6],5));
+console.log(solution([1, 2, 3],3));
+*/
+
+/* 40. 배열 회전시키기 - (120844) */
+/*
+function solution(numbers, direction) {
+    var answer = [];
+    if(direction == 'right'){ // 오른쪽 이동
+        for(var i=0; i<numbers.length; i++){
+            if(i == numbers.length-1){
+                // 마지막 value 라면 첫번째[0] 로 이동
+                answer[numbers.length-numbers.length] = numbers[numbers.length-1];
+            }else{
+                // 마지막 value가 아니라면 현재 자리의 index +1 이동 (0아님)
+               answer[i+1] = numbers[i];
+            }
+        }
+    }else{ // 왼쪽 이동
+        for(var i=0; i<numbers.length; i++){
+            // 첫번째 value 라면 마지막[배열.length-1]으로 이동
+            if(i == 0){
+                answer[numbers.length-1] = numbers[0];
+            }else{
+            // 첫번째 value가 아니라면 현재 자리의 index -1 이동 (0아님)
+               answer[i-1] = numbers[i];
+            }
+        }
+    }
+    return answer;
+}
+
+console.log(solution([1, 2, 3], "right"));
+console.log(solution([4, 455, 6, 4, -1, 45, 6], "left"));
+*/
+
+/* 41. 주사위의 개수 - (120845) */
 /*
 function solution(box, n) {
     return (Math.floor(box[0]/n))*(Math.floor(box[1]/n))*(Math.floor(box[2]/n));
@@ -435,9 +582,9 @@ console.log(solution([1,1,1],1));
 console.log(solution([10,8,6],3));
 */
 
-/* 42. 합성 수 찾기 */ /********************************/
+/* 42. 합성 수 찾기 - (120846) */ /********************************/
 
-/* 43. 최댓값 만들기(1) */
+/* 43. 최댓값 만들기(1) - (120847) */
 /*
 function solution(numbers) {
     numbers.sort((a, b) => a - b);
@@ -448,11 +595,62 @@ console.log(solution([1,2,3,4,5]));
 console.log(solution([0,31,24,10,1,9]));
 */
 
-/* 44. 팩토리얼 */ /********************************/
-/* 45. 모음 제거 */ /********************************/
-/* 46. 문자열 정렬하기 (1)*/ /********************************/
+/* 44. 팩토리얼 - (120848) */
+/*
+function solution(n) {
+    var i = 1;
+    var p = 1;
+    while(true){
+        p = p*i;
+        if(n==p){
+            return i;
+        }
+        if(n<p){
+            return i-1;
+        }
+        i++;
+    }
+}
 
-/* 47. 숨어있는 숫자의 덧셈 (1) */
+console.log(solution(3628800));
+console.log(solution(7));
+*/
+
+/* 45. 모음 제거 - (120849) */
+/*
+function solution(my_string) {
+    var answer = '';
+    for(var i=0; i<my_string.length; i++){
+        if(!(my_string[i]=='a'||my_string[i]=='e'||my_string[i]=='i'||my_string[i]=='o'||my_string[i]=='u')){
+            answer+=my_string[i];
+        }
+    }
+    return answer;
+}
+
+console.log(solution("bus"));
+console.log(solution("nice to meet you"));
+*/
+
+/* 46. 문자열 정렬하기 (1) - (120850) */
+/*
+function solution(my_string) {
+    var answer = [];
+    var iamnum = /\d/;
+    for(var i=0; i<my_string.length; i++){
+        if(iamnum.test(my_string[i])){
+            answer.push(parseInt(my_string[i]));
+        }
+    }
+    return answer.sort((a, b) => a - b);
+}
+
+console.log(solution("hi12392"));
+console.log(solution("p2o4i8gj2"));
+console.log(solution("abcde0"));
+*/
+
+/* 47. 숨어있는 숫자의 덧셈 (1) - (120851) */
 /*
 function solution(my_string) {
     var answer = [];
@@ -470,10 +668,31 @@ console.log(solution("aAb1B2cC34oOp"));
 console.log(solution("1a2b3c4d123"));
 */
 
-/* 48. 소인수분해 */ /********************************/
-/* 49. 컨트롤 제트 */ /********************************/
+/* 48. 소인수분해 - (120852) */ /********************************/
 
-/* 50. 배열의 원소의 길이 */
+/* 49. 컨트롤 제트 - (120853) */
+/*
+function solution(s) {
+    var answer = s.split(' ');
+    var result = 0;
+    for(var i=0; i<answer.length; i++){
+        if(answer[i] == 'Z'){
+            result += (-answer[i-1]);
+        }else{
+            result += parseInt(answer[i]);
+        }
+    }
+    return result;
+}
+
+console.log(solution("1 2 Z 3"));
+console.log(solution("10 20 30 40"));
+console.log(solution("10 Z 20 Z 1"));
+console.log(solution("10 Z 20 Z"));
+console.log(solution("-1 -2 -3 Z"));
+*/
+
+/* 50. 배열의 원소의 길이 - (120854) */
 /*
 function solution(strlist) {
     var answer = [];
