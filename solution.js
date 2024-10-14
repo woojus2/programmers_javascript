@@ -706,6 +706,161 @@ console.log(solution(["We", "are", "the", "world!"]));
 console.log(solution(["I", "Love", "Programmers."]));
 */
 
+/* 51. 중복된 문제 제거 - (120888) */
+/*
+function solution(my_string) {
+    var answer = my_string.split('');
+    const set = new Set(answer);
+    const uniqueArr = [...set];
+    return uniqueArr.join('');
+}
+
+console.log(solution("people"));
+console.log(solution("We are the world"));
+*/
+
+/* 52. 삼각형의 완성조건(1) - (120889) */
+/*
+function solution(sides) {
+    sides = sides.sort((a, b) => a - b);
+    var answer = 0;
+    var maxValue = 0;
+     for (var i=0; i<sides.length; i++){
+        if(2!=i){
+            answer+=sides[i];
+            maxValue = sides[2];
+        }
+    }
+    return answer>maxValue? 1 : 2 ;
+}
+
+console.log(solution([1, 2, 3]));
+console.log(solution([3, 6, 2]));
+console.log(solution([199, 72, 222]));
+*/
+
+/* 53. 가까운 수 - (120890) */ /********************************/
+
+/* 54. 369게임 - (120891) */
+/*
+function solution(order) {
+    var answer = 0;
+    order = String(order);
+    for(var i=0; i<order.length; i++){
+        
+       if(order[i]==3 || order[i]==6 || order[i]==9){
+            answer++;
+        }
+    }
+    return answer;
+}
+
+console.log(solution(3));
+console.log(solution(29423));
+*/
+
+/* 55. 암호 해독 - (120892) */
+/*
+function solution(cipher, code) {
+    var answer,result = [];
+    answer = cipher;
+    for(var i = code-1; i<answer.length; i=i+code){
+       result.push(answer[i]);
+    }
+    return result.join('');
+}
+
+console.log(solution("dfjardstddetckdaccccdegk", 4));
+console.log(solution("pfqallllabwaoclk", 2));
+*/
+
+/* 56. 대문자와 소문자 - (120893) */
+/*
+function solution(my_string) {
+    var answer = [my_string];
+    for(var i=0; i<my_string.length; i++){
+        if(my_string[i]==my_string[i].toLowerCase()){
+            answer[i] = my_string[i].toUpperCase();
+        }else{
+            answer[i] = my_string[i].toLowerCase();
+        }
+    }
+    return answer.join("");
+}
+
+console.log(solution("cccCCC"));
+console.log(solution("abCdEfghIJ"));
+*/
+
+/* 57. 영어가 싫어요 - (120894) */
+/*
+function solution(numbers) {
+    var answer = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" ]
+    for(var i=0; i<answer.length; i++){
+       numbers = numbers.replaceAll(answer[i],i);
+    }
+    return Number(numbers);
+}
+
+console.log(solution("onetwothreefourfivesixseveneightnine"));
+console.log(solution("onefourzerosixseven"));
+*/
+
+/* 58. 인덱스 바꾸기 - (120895) */
+/*
+function solution(my_string, num1, num2) {
+    var answer = my_string.split('');
+    var temp = answer[num1];
+    for(var i=0; i<answer.length; i++){
+        if(i == num1){
+            answer[num1]=answer[num2];
+        }else if(i == num2){
+            answer[num2]=temp;
+        }
+    }
+    return answer.join('');
+}
+
+console.log(solution("hello", 1, 2));
+console.log(solution("I love you", 3, 6));
+*/
+
+/* 59. 한 번만 등장한 문자 - (120896) */
+/*
+function solution(s) {
+    
+    var answer = s.split('');
+    var result = [];
+    
+    for(var i=0; i<answer.length; i++){
+        if(s.lastIndexOf(answer[i]) == s.indexOf(answer[i])){
+            result+=answer[i];
+        }
+    }
+    return result.split('').sort().join('');
+}
+
+console.log(solution("abcabcadc"));
+console.log(solution("abdc"));
+console.log(solution("hello"));
+*/
+
+/* 60. 약수 구하기 - (120897) */
+/*
+function solution(n) {
+    
+    var answer = [];
+    for(var i=0; i<=n; i++){
+        if(n%i == 0){
+            answer.push(i);
+        }
+    }
+    return answer;
+}
+
+console.log(solution(24));
+console.log(solution(29));
+*/
 
 /*
 출처: 프로그래머스 코딩 테스트 입문, https://school.programmers.co.kr/learn/challenges/beginner?order=acceptance_desc
