@@ -706,6 +706,8 @@ console.log(solution(["We", "are", "the", "world!"]));
 console.log(solution(["I", "Love", "Programmers."]));
 */
 
+//////////////////////////////////////////////////
+
 /* 51. 중복된 문제 제거 - (120888) */
 /*
 function solution(my_string) {
