@@ -864,6 +864,143 @@ console.log(solution(24));
 console.log(solution(29));
 */
 
+//////////////////////////////////////////////////
+
+/* 61. 편지 - (120898) */
+/*
+function solution(message) {
+    return message.length*2;
+}
+
+console.log(solution("happy birthday!"));
+console.log(solution("I love you~"));
+*/
+
+/* 62. 가장 큰 수 찾기 - (120899) */
+/*
+function solution(array) {
+    var num = 0;
+    for(var i = 0; i < array.length; i++){
+        if (Math.max(...array) == array[i]){
+            num = i;
+        }
+    }
+    var answer = [];
+    answer.push(Math.max(...array));
+    answer.push(num);
+    return answer;
+}
+
+console.log(solution([1, 8, 3]));
+console.log(solution([9, 10, 11, 8]));
+*/
+
+/* 63. 문자열 계산하기 - (120902) */
+/*
+function solution(my_string) {
+    return eval(my_string);
+}
+
+console.log(solution("3 + 4"));
+*/
+
+/* 64. 배열의 유사도 - (120903) */
+/*
+function solution(s1, s2) {
+    var answer = 0;
+    for(var i=0; i<s1.length; i++){
+        for(var j=0; j<s2.length; j++){
+            if(s1[i]==s2[j]){
+                answer++;
+            }
+        }
+    }
+    return answer;
+}
+
+console.log(solution(["a", "b", "c"],["com", "b", "d", "p", "c"]));
+console.log(solution(["n", "omg"],["m", "dot"]));
+*/
+
+/* 65. 숫자 찾기 - (120904) */
+/*
+function solution(num, k) {
+    var answer = 0;
+    num = String(num);
+    answer = num.indexOf(k)+1 || -1;
+    return answer;
+}
+
+console.log(solution(29183,1));
+console.log(solution(232443,4));
+console.log(solution(123456,7));
+*/
+
+/* 66. n의 배수 고르기 - (120905) */
+/*
+function solution(n, numlist) {
+    var answer = [];
+    for(var i=0; i<numlist.length; i++){
+        if(numlist[i]%n == 0){
+            answer.push(numlist[i]);
+        }
+    }
+    return answer;
+}
+
+console.log(solution(3,	[4, 5, 6, 7, 8, 9, 10, 11, 12]));
+console.log(solution(5, [1, 9, 3, 10, 13, 5]));
+console.log(solution(12, [2, 100, 120, 600, 12, 12]));
+*/
+
+/* 67. 자릿수 더하기 - (120906) */
+/*
+function solution(n) {
+    n = String(n);
+    var answer = 0;
+    for(var i=0; i<n.length; i++){
+       answer += Number(n[i]);
+    }
+    return answer;
+}
+
+console.log(solution(1234));
+console.log(solution(930211));
+*/
+
+/* 68. OX퀴즈 - (120907) */ /********************************/
+
+/* 69. 문자열안에 문자열 - (120908) */
+/*
+function solution(str1, str2) {
+    if(str1.includes(str2)){
+       return true+0;
+    }else{
+        return true+1;
+    }
+}
+
+console.log(solution("ab6CDE443fgh22iJKlmn1o", "6CD"));
+console.log(solution("ppprrrogrammers", "pppp"));
+console.log(solution("AbcAbcA", "AAA"));
+*/
+
+/* 70. 제곱수 판별하기 - (120897) */
+/*
+function solution(n) {
+    var answer = 1;
+    if(Number.isInteger(Math.sqrt(n))){
+        return answer;
+    }else{
+        return answer+1;
+    }
+}
+
+console.log(solution(144));
+console.log(solution(976));
+*/
+
+
 /*
 출처: 프로그래머스 코딩 테스트 입문, https://school.programmers.co.kr/learn/challenges/beginner?order=acceptance_desc
 */
