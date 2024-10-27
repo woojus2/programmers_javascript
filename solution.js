@@ -1,5 +1,7 @@
 /* 프로그래머스 - 코딩테스트 - 입문문제 */
 
+/* ************* 2주차 ************* */
+
 /* 1. 두 수의 합 */
 /*
 function solution(num1, num2) {
@@ -353,7 +355,7 @@ console.log(solution(51));
 console.log(solution(100));
 */
 
-//////////////////////////////////////////////////
+/* ************* 3주차 ************* */
  
 /* 31. 진료순서 정하기 - (120835) */
 /*
@@ -706,7 +708,7 @@ console.log(solution(["We", "are", "the", "world!"]));
 console.log(solution(["I", "Love", "Programmers."]));
 */
 
-//////////////////////////////////////////////////
+/* ************* 4주차 ************* */
 
 /* 51. 중복된 문제 제거 - (120888) */
 /*
@@ -864,7 +866,7 @@ console.log(solution(24));
 console.log(solution(29));
 */
 
-//////////////////////////////////////////////////
+/* ************* 5주차 ************* */
 
 /* 61. 편지 - (120898) */
 /*
@@ -970,6 +972,8 @@ console.log(solution(930211));
 
 /* 68. OX퀴즈 - (120907) */ /********************************/
 
+/* ************* 6주차 ************* */
+
 /* 69. 문자열안에 문자열 - (120908) */
 /*
 function solution(str1, str2) {
@@ -998,6 +1002,76 @@ function solution(n) {
 
 console.log(solution(144));
 console.log(solution(976));
+*/
+
+/* 71. 세균 증식 - (120910) */ /********************************/
+
+/* 72. 문자열 정렬하기(2) - (120911) */
+/*
+function solution(my_string) {
+    var answer = my_string.toLowerCase();
+    var result = answer.split('');
+    return result.sort().join('');
+}
+
+console.log(solution("Bcad"));
+console.log(solution("heLLo"));
+console.log(solution("Python"));
+*/
+
+/* 73. 7의 개수 - (120912) */
+/*
+function solution(array) {
+    var result = '';
+    var answer = [];
+    var cnt = 0;
+    for(var i=0; i<array.length; i++){
+        result+=array[i];
+        answer = result.split('');
+    }
+   for(var i=0; i<answer.length; i++){
+       
+       if(answer[i] === '7'){
+           cnt++;
+       }
+    }
+    return cnt;
+}
+
+console.log(solution([7, 77, 17]));
+console.log(solution([10, 29]));
+*/
+
+/* 74. 잘라서 배열로 저장하기 - (120913) */ /********************************/
+
+/* 75. 중복된 숫자 개수 - (120583) */
+/*
+function solution(array, n) {
+    var count = 0;
+    for(var i = 0; i < array.length; i++){
+        if(array[i] == n){
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(solution([1, 1, 2, 3, 4, 5]));
+console.log(solution([0, 2, 3, 4]));
+*/
+
+/* 76. 머쓱이보다 키 큰 사람 - (120585) */
+/*
+function solution(array, height) {
+    var cnt=0;
+    for(var i=0; i<array.length; i++){
+        if(height<array[i]){cnt++;}
+    }
+    return cnt;
+}
+
+console.log(solution([149, 180, 192, 170],167));
+console.log(solution([180, 120, 140],190));
 */
 
 
