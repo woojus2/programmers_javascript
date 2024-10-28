@@ -1004,7 +1004,19 @@ console.log(solution(144));
 console.log(solution(976));
 */
 
-/* 71. 세균 증식 - (120910) */ /********************************/
+/* 71. 세균 증식 - (120910) */
+/*
+function solution(n, t) {
+    var result = 1;
+    for(var i = 1; i<=t; i++){
+        result *= 2;
+    }
+    return result*n;
+}
+
+console.log(solution(2,10));
+console.log(solution(7,15));
+*/
 
 /* 72. 문자열 정렬하기(2) - (120911) */
 /*
@@ -1042,7 +1054,22 @@ console.log(solution([7, 77, 17]));
 console.log(solution([10, 29]));
 */
 
-/* 74. 잘라서 배열로 저장하기 - (120913) */ /********************************/
+/* 74. 잘라서 배열로 저장하기 - (120913) */
+/*
+function solution(my_str, n) {
+    var answer = '';
+    for(var i=0; i<my_str.length; i++){
+        answer += my_str[i];
+        if((i+1)%n==0){
+            answer += ' ';
+        }
+    }
+ return answer.trim().split(' ');
+}
+
+console.log(solution("abc1Addfggg4556b", 6));
+console.log(solution("abcdef123", 3));
+*/
 
 /* 75. 중복된 숫자 개수 - (120583) */
 /*
