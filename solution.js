@@ -1101,6 +1101,110 @@ console.log(solution([149, 180, 192, 170],167));
 console.log(solution([180, 120, 140],190));
 */
 
+/* 직사각형 넓이 구하기 - (120860) */
+/*
+function solution(dots) {
+    var answer1 = 0;
+    var answer2 = 0;
+    var resultx = [];
+    var resulty = [];
+    for(var i=0; i<dots.length; i++){
+        for(var j=0; j<dots[i].length; j++){
+            if(dots[0][1] == dots[i][1]){
+                resultx.push(dots[i]);
+                var numSet = new Set(resultx);
+                resultx = [...numSet];
+            }
+            if(dots[0][0] == dots[i][0]){
+                resulty.push(dots[i]);
+                var numSet = new Set(resulty);
+                resulty = [...numSet];
+            }
+        }
+    }
+    for(var k=Math.min(resultx[0][0],resultx[1][0]); 
+        k<Math.max(resultx[0][0],resultx[1][0]); k++){
+        answer1++;
+    }
+    for(var k=Math.min(resulty[0][1],resulty[1][1]); 
+        k<Math.max(resulty[0][1],resulty[1][1]); k++){
+        answer2++;
+    }
+    return answer1*answer2;
+}
+
+console.log(solution([[1, 1], [2, 1], [2, 2], [1, 2]]));
+console.log(solution([[-1, -1], [1, 1], [1, -1], [-1, 1]]));
+*/
+
+/* 캐릭터의 좌표 - (120861) */
+/*
+function solution(keyinput, board) {
+    var answer = [0,0];
+    // 오른쪽 이동 가능 범위
+    var moveable_right = Math.floor(board[0]/2);
+    // 왼쪽 이동 가능 범위
+    var moveable_left = -Math.floor(board[0]/2);
+    // 위쪽 이동 가능 범위
+    var moveable_up = Math.floor(board[1]/2);  
+    // 위쪽 이동 가능 범위
+    var moveable_down = -Math.floor(board[1]/2);  
+    
+    for(var i = 0; i < keyinput.length; i++){
+        if(keyinput[i]=="left"){
+            answer[0]--;
+            if(answer[0]<moveable_left){
+                answer[0]=moveable_left;
+            }
+        }else if(keyinput[i]=="right"){
+            answer[0]++;
+            if(answer[0]>moveable_right){
+                answer[0]=moveable_right;
+            }
+        }else if(keyinput[i]=="up"){
+            answer[1]++;
+            if(answer[1]>moveable_up){
+                answer[1]=moveable_up;
+            }
+        }else{
+            answer[1]--;
+            if(answer[1]<moveable_down){
+                answer[1]=moveable_down;
+            }
+        }
+    }
+    return answer;
+}
+console.log(solution(["left", "right", "up", "right", "right"],[11, 11]));
+console.log(solution(["down", "down", "down", "down", "down"],[7, 9]));
+*/
+
+/* 쵀댓값 만들기(2) - (120862) */
+/*
+function solution(numbers) {
+    var answer = [];
+    for(var i=1; i<=numbers.length; i++){
+        for(var j=i-1;j<numbers.length-1; j++){
+            answer.push(numbers[i-1]*numbers[j+1]);
+        }
+    }
+    return Math.max(...answer);
+}
+
+console.log(solution([1, 2, -3, 4, -5]));
+console.log(solution([0, -31, 24, 10, 1, 9]));
+console.log(solution([10, 20, 30, 5, 5, 20, 5]));
+*/
+
+/* 다항식 더하기 */ /********************************/
+
+/* ************* 8주차 ************* */
+
+/* 숨어있는 숫자의 덧셈! */ /********************************/
+/* 안전지대 */ /********************************/
+/* 삼각형의 완성조건(2) */ /********************************/
+/* 외계어 사전 */ /********************************/
+
 
 /*
 출처: 프로그래머스 코딩 테스트 입문, https://school.programmers.co.kr/learn/challenges/beginner?order=acceptance_desc
